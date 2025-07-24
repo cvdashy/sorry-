@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hello :)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="itlog pugo">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fff8f4;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #dc5a5a;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #6a6a6a;
+      margin-bottom: 30px;
+      font-weight: normal;
+      min-height: 40px;
+    }
+
+    h6 {
+      margin-bottom: 15px;
+      color: #999;
+    }
+
+    img {
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      width: 300px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    p {
+      margin: 20px 0;
+      line-height: 1.7;
+      font-size: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      color: #dc5a5a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 12px 30px;
+      background-color: #dc5a5a;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #c94646;
+    }
+
+    .floating-heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+      opacity: 0.4;
+      border-radius: 50%;
+    }
+
+    .floating-heart::before,
+    .floating-heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .floating-heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .floating-heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: -20px;
+        left: calc(50% + 0px);
+        opacity: 0;
+        transform: scale(0.8) rotate(45deg);
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        bottom: 100%;
+        left: calc(50% + 100px);
+        opacity: 0;
+        transform: scale(1.2) rotate(45deg);
+      }
+    }
+
+    /* Typing Effect */
+    .typing {
+      display: inline-block;
+      border-right: 2px solid #666;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff8f4;
+      margin: 15% auto;
+      padding: 30px;
+      border-radius: 16px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: -10px;
+    }
+
+    .close:hover {
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Hearts -->
+  <div class="floating-heart" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="floating-heart" style="left: 30%; animation-delay: 2s;"></div>
+  <div class="floating-heart" style="left: 60%; animation-delay: 4s;"></div>
+
+  <!-- Audio -->
+  <audio id="bg-music" loop>
+    <source src="https://raw.githubusercontent.com/liagiba-17/WTG.mp3/main/WNT.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    document.body.addEventListener("click", function () {
+      const music = document.getElementById("bg-music");
+      music.play().catch((e) => {
+        console.log("Playback failed:", e);
+      });
+    }, { once: true });
+  </script>
+
+  <div class="container">
+    <h1>Thank you for opening this file.</h1>
+    <h2><span class="typing">friends n tau ul8, plz 🥺</span></h2>
+    <h6>(click the picture)</h6>
+
+    <img src="https://i.imgur.com/Sy6bwXs.jpg" alt="Cute pug" onclick="document.getElementById('myModal').style.display='block'">
+
+    <p><i>I’m sorry. I do regret things now — deeply. I forgot about boundaries and being sensitive during that moment. Especially na you are soft-hearted, I was really stupid.</i></p>
+
+    <p>Sorry, <b>ate ji!</b> I didn’t think it all through talaga, as in!] The audacity I had, PLEASE LANG -- ang tanga ko, bi. All seriousness muna, I do value our friendship a lot. I am sending this to you because I want you to know the depth of my feelings — how regretful and guilty I am. It took me a few days to say sorry kasi hindi ko na-realize kagagahan ko immediately, and I didn’t want to rush. You are already like family to me, ang bigat sa pakiramdam na hindi tayo okay. Lalo na, na it was my fault. </p>
+
+    <p>Medyo nakakahiya ’to if busy ka lang talaga tapos hindi mo ako nireplyan dahil do’n, PERO I DID SOMETHING WRONG DIN NAMAN KASI BEFORE WE STOPPED TALKING. But at least, I said sorry and everything else is genuine anyway. I could only hope for the best.</p>
+
+    <p>Please respond here (click button):</p>
+
+    <a href="https://forms.gle/oorjhW1NrP2wSkFVA" target="_blank">
+      <button>SORRY HEHE</button>
+    </a>
+
+    <p>I know that medyo gaga talaga ako, and super tanga! I regret things now, and I am hurt — sobra. Because I hurt you, and I miss you na. Sana we can bring back our friendship. I miss you a lot already! I miss you, isaw balls.</p>
+
+    <p>Medyo over siguro ako for making a literal website. Don’t worry, lesson din naman namin. So, win-win for me — I made a website & learned my lesson at the same time. REPLYAN MO NA AKO, PLZ 🙏🏻</p>
+
+    <p>Click here for something, <a href="https://drive.google.com/file/d/1-0aidjg_W_ZMROaV161pY8HL9QEvHKYg/view?usp=drivesdk" target="_blank">hehe</a> :)</p>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+      <p><b>I hope this made you smile kahit konti :)</b><br>Because I miss you. Sobra. Let’s talk again soon? 🥹</p>
+    </div>
+  </div>
+
+  <script>
+    window.onclick = function(event) {
+      const modal = document.getElementById('myModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
